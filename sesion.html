@@ -20,54 +20,64 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div>
         <!-- Select with floating label -->
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
-            <input type="text" value="" class="mdl-textfield__input" id="sample3" readonly>
-            <input type="hidden" value="" name="sample3">
-            <label for="sample3" class="mdl-textfield__label">Sesión</label>
-            <ul for="sample3" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                    <li class="mdl-menu__item" data-val="NB">New Born</li>
-                    <li class="mdl-menu__item" data-val="MT">Maternity</li>
-                    <li class="mdl-menu__item" data-val="1A">+ 1 año</li>
-                    <li class="mdl-menu__item" data-val="NA">Navideña</li>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select ">
+            <input type="text" value="" class="mdl-textfield__input" id="cmbsesion">
+            <input type="hidden" value="" name="cmbsesion">
+            <label for="cmbsesion" class="mdl-textfield__label">Sesión</label>
+            <ul for="cmbsesion" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                <li class="mdl-menu__item" data-val="NB">New Born</li>
+                <li class="mdl-menu__item" data-val="MT">Maternity</li>
+                <li class="mdl-menu__item" data-val="1A">+ 1 año</li>
+                <li class="mdl-menu__item" data-val="NA">Navideña</li>
             </ul>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">Fecha</label>
+            <input class="mdl-textfield__input" type="datetime" id="dtfecha">
+            <label class="mdl-textfield__label" for="dtfecha">Fecha</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">Precio</label>
+            <input class="mdl-textfield__input" type="text" id="txtprecio">
+            <label class="mdl-textfield__label" for="txtprecio">Precio</label>
         </div>
+        <br>
         <div class="mdl-textfield mdl-js-textfield">
-            <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
-            <label class="mdl-textfield__label" for="sample5">Info familia</label>
+            <textarea class="mdl-textfield__input" type="text" rows="3" id="txtinfo"></textarea>
+            <label class="mdl-textfield__label" for="txtinfo">Info</label>
         </div>
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-            <span class="mdl-checkbox__label">Fotolibro</span>
-        </label>
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-            <span class="mdl-checkbox__label">Fotolienzo</span>
-        </label>
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-            <span class="mdl-checkbox__label">Hermanito</span>
-        </label>
-        <button id="btn-borrar-productos"
-            class="mdl-button mdl-js-button mdl-button--accent mdl-button--accent mdl-js-ripple-effect">
-            Volver
-        </button>
-        <button id="btn-borrar-productos"
-            class="mdl-button mdl-js-button mdl-button--accent mdl-button--accent mdl-js-ripple-effect" onclick="">
-            Guardar
-        </button>
+        <div class="contenedor">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" unchecked>
+                <span class="mdl-checkbox__label">Fotolibro</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" unchecked>
+                <span class="mdl-checkbox__label">Fotolienzo</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+                <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" unchecked>
+                <span class="mdl-checkbox__label">Hermanito</span>
+            </label>
+        </div>
+        <br><br>
+        <div class="contenedor">
+            <form action="/index.html">
+                <button id="btn-borrar-productos"
+                    class="mdl-button mdl-js-button mdl-button--accent mdl-button--accent mdl-js-ripple-effect"
+                    style="align-self: flex-end;">
+                    Volver
+                </button>
+            </form>
+            <button id="btn-borrar-productos"
+                class="mdl-button mdl-js-button mdl-button--accent mdl-button--accent mdl-js-ripple-effect" onclick="">
+                Guardar
+            </button>
+        </div>
     </div>
 
 </body>

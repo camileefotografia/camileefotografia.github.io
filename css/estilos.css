@@ -32,7 +32,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+   
 }
 .fuenteCombo{
-    font-size: small;
+    font-size: 13px;
 }
