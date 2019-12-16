@@ -39,7 +39,7 @@ function configurarListeners() {
         if (_producto != "") {
 
             listaproductos.forEach(prod => {
-                if (prod.sesion.toLowerCase() == _producto.toLowerCase()) {
+                if (prod.sesion.toLowerCase().includes(_producto.toLowerCase())) {
                     console.log(_producto + " Encontrado!");
                     renderLista(_producto);
                 }
@@ -49,7 +49,6 @@ function configurarListeners() {
             renderLista();
         }
     })
-
 }
 
 function borrarProd(index) {
@@ -80,8 +79,9 @@ function renderLista(nombre) {
     ul.innerHTML = '';
 
     listaproductos.forEach((prod, index) => {
-        if(nombre== "" || nombre.toLowerCase()==prod.sesion.toLowerCase()){
-        ul.innerHTML += `
+        if(nombre== "" ||prod.sesion.toLowerCase().includes(nombre.toLowerCase()))// || nombre.toLowerCase()==prod.sesion.toLowerCase()){
+        {
+            ul.innerHTML += `
                 <li class="mdl-list__item">
                     <span class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored w-10" >
                         <i class="material-icons"> photo_camera </i>
@@ -90,9 +90,8 @@ function renderLista(nombre) {
                         ${prod.sesion}
                     </span>
                     <span class="mdl-list__item-primary-content w-30 ml-item ">
-
                         <div class="mdl-textfield mdl-js-textfield">
-                            <textarea class="mdl-textfield__input fuenteCombo" type="text" rows= "1" id="sample-precio-${index}" >${prod.fecha}</textarea>
+                            <textarea class="mdl-textfield__input fuenteCombo" type="date" rows= "1" id="sample-precio-${index}" readonly>${prod.fecha}</textarea>
                         </div>
                     </span>
                 </li>
@@ -103,6 +102,10 @@ function renderLista(nombre) {
 
     let lista = document.querySelector('#lista');
     lista.appendChild(ul);
+    ul.addEventListener("click", e =>{
+        console.log(e.target.innerHTML);
+        document.location = "/sesion.html";
+    })
 
     if (!iniRenderLista) //Lo aplica a partir de la segunda Renderizacion, sino da error
     {
